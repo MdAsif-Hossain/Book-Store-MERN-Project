@@ -1,19 +1,38 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaGoogle } from "react-icons/fa";
 import { useForm } from "react-hook-form"
+import { useAuth } from '../context/AuthContext';
 
 const Login = () => {
     const[message, setMessege] = useState();
+    const {loginUser,signInWithGoogle}= useAuth()
+    const navigate= useNavigate()
     const {
         register,
         handleSubmit,
         watch,
         formState: { errors },
       } = useForm()
-      const onSubmit = (data) => console.log(data)
-      const handleGoogleSignIn=()=>{
-        
+      const onSubmit = async(data) => {
+        try {
+            await loginUser(data.email,data.password)
+            alert("Login successfull!");
+            navigate("/")
+        } catch (error) {
+            setMessege("Please provide a valid email and password")
+            console.erre(error)
+            
+        }
+      }
+      const handleGoogleSignIn= async()=>{
+        try {
+            await signInWithGoogle();
+            alert("Login Successfull!!")
+        } catch (error) {
+            alert("Google sign in failed")
+            console.erre(error)
+        }
       }
   return (
     <div className='h-[calc(100vh-120px)] flex justify-center items-center'>
@@ -67,7 +86,7 @@ const Login = () => {
                 <div className='mt-4'>
                     <button onClick={handleGoogleSignIn}
                     className='w-full flex flex-wrap gap-1 items-center justify-center
-                    bg-blue-700 hover:bg-blue-500 text-white font-bolld py-2 px-4 rounded focus:outline-none'><FaGoogle className='mr-2' />Sign in with Google</button>
+                    bg-blue-700 hover:bg-blue-500 text-white font-bolld py-2 px-4 rounded focus:outline-none'><FaGoogle className='mr-2' />Login with Google</button>
                 </div>
                 <p className="mt-5 text-center text-gray-500 text-xs">
             &copy;2025 Book Store. All rights reserved.</p>
