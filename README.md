@@ -130,7 +130,12 @@ Example: User, Book, Cart, Order, Admin.
 Describe the flow of activities a user or admin goes through.  
 Example: login → browse → add to cart → checkout
 
-**_📍 Diagram Placeholder: /diagrams/activity-diagram.png_**
+**_📍 Admin Diagram Placeholder: ![](https://github.com/MdAsif-Hossain/Book-Store-MERN-Project/blob/main/Diagram/ActivityAdmin.jpg)
+
+**_📍 Customer Diagram Placeholder:
+![](https://github.com/MdAsif-Hossain/Book-Store-MERN-Project/blob/main/Diagram/ActivityCustomer.jpg)
+
+**_📍 Visitor Diagram Placeholder: ![](https://github.com/MdAsif-Hossain/Book-Store-MERN-Project/blob/main/Diagram/activityVisitor.jpg)
 
 ---
 
