@@ -112,7 +112,7 @@ Example:
 - Admin adds/edits/deletes books  
 - Admin manages orders  
 
-**_📍 Diagram Placeholder: /diagrams/use-case-diagram.png_**
+**_📍 Diagram Placeholder: ![usecase](https://github.com/MdAsif-Hossain/Book-Store-MERN-Project/blob/main/Diagram/useCase.jpg)
 
 ---
 
