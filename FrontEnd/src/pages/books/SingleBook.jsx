@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/features/cart/cartSlice';
 import { useFetchBookByIdQuery } from '../../redux/features/books/booksApi';
 
+
 const SingleBook = () => {
     const {id} = useParams();
     const {data: book, isLoading, isError} = useFetchBookByIdQuery(id);

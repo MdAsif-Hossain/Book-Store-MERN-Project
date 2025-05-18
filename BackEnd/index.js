@@ -15,7 +15,9 @@ app.use(cors({
 
 // ✅ Import and use routes
 const bookRouter = require('./src/books/book.route');
-app.use("/api/books", bookRouter); // ✅ Use the correct variable name
+const orderRoutes = require("./src/orders/order.route")
+app.use("/api/books", bookRouter); 
+app.use("/api/orders", orderRoutes); 
 
 // ✅ Use async IIFE to connect to DB and start server
 (async () => {
